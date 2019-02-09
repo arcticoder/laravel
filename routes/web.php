@@ -11,10 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return '<h3>Landon App Page</h3>';
-    //return view('welcome');
-});
+Route::get('/', 'ContentsController@home');
+Route::get('/clients', 'ClientController@index');
+Route::get('/clients/new', 'ClientController@newClient');
+Route::post('/clients/new', 'ClientController@create');
 
 
 Route::get('/about', function () {
