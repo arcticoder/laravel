@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Client;
+use App\Room;
 
 class RoomsController extends Controller
 {
@@ -20,6 +22,6 @@ class RoomsController extends Controller
         $data['rooms']= $room->getAvailableRooms($dateFrom, $dateTo);
         $data['client'] = $client->find($client_id);
 
-        return view('rooms/checkAvailableRooms');
+        return view('rooms/checkAvailableRooms', $data);
     }
 }
