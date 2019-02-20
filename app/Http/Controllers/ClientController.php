@@ -75,7 +75,7 @@ class ClientController extends Controller
 
     public function show($client_id)
     {
-        $data = [];
+        $data = []; $data['client_id'] = $client_id;
         $data['titles'] = $this->titles;
         $data['modify'] = 1;
         $client_data = $this->client->find($client_id);
