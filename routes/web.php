@@ -20,6 +20,7 @@ Route::post('/clients/{client_id}', 'ClientController@modify')->name('update_cli
 
 Route::get('/reservations/{client_id}', 'RoomsController@checkAvailableRooms')->name('check_room');
 Route::post('/reservations/{client_id}', 'RoomsController@checkAvailableRooms')->name('check_room');
+    Route::get('export', 'ClientController@export');
 
 Route::get('/book/room/{client_id}/{room_id}/{date_in}/{date_out}', 'ReservationsController@bookRoom')->name('book_room');
 
